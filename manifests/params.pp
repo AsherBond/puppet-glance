@@ -3,7 +3,7 @@
 class glance::params {
   include openstacklib::defaults
 
-  $pyver3 = $openstacklib::defaults::pyver3
+  $pybasedir = $openstacklib::defaults::pybasedir
 
   $client_package_name = 'python3-glanceclient'
 
@@ -21,7 +21,7 @@ class glance::params {
       $pyceph_package_name       = 'python3-rbd'
       $lock_path                 = '/var/lib/glance/tmp'
       $glance_wsgi_script_path   = '/var/www/cgi-bin/glance'
-      $glance_wsgi_script_source = "/usr/lib/python${pyver3}/site-packages/glance/wsgi/api.py"
+      $glance_wsgi_script_source = "${pybasedir}/glance/wsgi/api.py"
     }
     'Debian': {
       $package_name              = undef
