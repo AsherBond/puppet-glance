@@ -98,8 +98,8 @@ define glance::backend::multistore::s3 (
     stdlib::ensure_packages('python-boto3', {
       'ensure' => $package_ensure,
       'name'   => $glance::params::boto3_package_name,
-      'tag'    => ['openstack','glance-package'],
     })
+    Package<| title == 'python-boto3' |> { tag +> 'glance-support-package' }
   }
 
   glance_api_config {

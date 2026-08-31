@@ -36,7 +36,6 @@ describe 'glance::backend::multistore::s3' do
         is_expected.to contain_package('python-boto3').with(
           :ensure => 'installed',
           :name   => 'python3-boto3',
-          :tag    => ['openstack', 'glance-package']
         )
       end
 
@@ -87,7 +86,6 @@ describe 'glance::backend::multistore::s3' do
         is_expected.to contain_package('python-boto3').with(
           :ensure => 'latest',
           :name   => 'python3-boto3',
-          :tag    => ['openstack', 'glance-package']
         )
       end
 
